@@ -4,7 +4,7 @@ spring:
       on-profile: local
 ---
 spring:
-  profiles: local
+  profiles: dev
   kafka:
     producer:
       bootstrap-servers:
@@ -21,13 +21,13 @@ spring:
           - localhost:9094
 ---
 spring:
-  profiles: dev
+  profiles: staging
   kafka:
     producer:
       bootstrap-servers:
-        - dev:9092
-        - dev:9093
-        - dev:9094
+        - staging:9092
+        - staging:9093
+        - staging:9094
       key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
 ---
